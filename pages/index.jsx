@@ -1,5 +1,8 @@
 import Head from "next/head";
+import Image from "next/image";
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import Footer from "../components/Footer";
 
 export default function Home(initialData) {
   const [formInputs, setFormInputs] = useState();
@@ -29,13 +32,19 @@ export default function Home(initialData) {
   return (
     <div>
       <Head>
-        <title>Giphy search app</title>
-        <meta name="description" content="Giphy search app" />
+        <title>Giphy Search App</title>
+        <meta
+          name="description"
+          content="Love giphys? We do too. Use our advanced giphy search to find the perfect giphy for any occation"
+        ></meta>
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="/styles.css" />
       </Head>
 
       <main>
+        <div className="logo-container">
+          <Image src="/logo.png" alt="logo" layout="fill" />
+        </div>
         <h1>Giphy Search App</h1>
         <form onSubmit={search}>
           <input
@@ -47,6 +56,12 @@ export default function Home(initialData) {
           <button>Search</button>
         </form>
         <h1>Search results for: {searchTerm}</h1>
+        <p>
+          Share this search with others:
+          <Link href="/search/[pid]" as={`/search/${searchTerm}`}>
+            <a>{`http://localhost:3000/search/${searchTerm}`}</a>
+          </Link>
+        </p>
         <div className="giphy-search-results-grid">
           {searchResults.map((each, index) => {
             return (
@@ -59,18 +74,7 @@ export default function Home(initialData) {
         </div>
       </main>
 
-      {/* <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer> */}
+      <Footer />
     </div>
   );
 }
