@@ -46,3 +46,15 @@ input {
 input:focus {
   outline: 0px;
 }
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 4fr;
+  background-color: #efefef;
+  margin-top: 40px;
+}
+.logo-container {
+  max-width: 500px;
+  margin: auto;
+  padding: 40px 0px;
+}
