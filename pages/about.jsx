@@ -8,7 +8,7 @@ export default function About() {
         <Head>
           <title>Create Next App</title>
           <link rel="icon" href="/favicon.ico" />
-          <link rel="stylesheet" href="/styles.css" />
+          {/* <link rel="stylesheet" href="/styles.css" /> */}
         </Head>
         <h1>About</h1>
         <p>

@@ -13,8 +13,10 @@ export default function Search(initialData) {
           content={initialData.giphys.map((each, index) => each.title + " ")}
         ></meta>
         <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="/styles.css" />
+        {/* <link rel="stylesheet" href="/styles.css" /> */}
       </Head>
+
+      {/* <style src="/styles.css"></style> */}
       <p>
         <Link href="/">
           <a>Go home</a>

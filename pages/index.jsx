@@ -3,6 +3,12 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Footer from "../components/Footer";
+import styled from "styled-components";
+
+const Title = styled.h1`
+  font-size: 50px;
+  color: ${({ theme }) => theme.colors.primary};
+`;
 
 export default function Home(initialData) {
   const [formInputs, setFormInputs] = useState();
@@ -38,10 +44,11 @@ export default function Home(initialData) {
           content="Love giphys? We do too. Use our advanced giphy search to find the perfect giphy for any occation"
         ></meta>
         <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="/styles.css" />
+        {/* <link rel="stylesheet" href="/styles.css" /> */}
       </Head>
 
       <main>
+        <Title>My page</Title>
         <div className="logo-container">
           <Image src="/logo.png" alt="logo" layout="fill" />
         </div>
@@ -79,7 +86,7 @@ export default function Home(initialData) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   let catGiphys = await fetch(
     "https://api.giphy.com/v1/gifs/search?q=cats&api_key=wLSoAUMd0P7btbJuuj9OGDxz63mQmJIp&limit=10"
   );
