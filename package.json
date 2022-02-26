@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "export": "next export",
+    "start": "node server.js",
     "lint": "next lint"
   },
   "dependencies": {
@@ -22,6 +23,7 @@
     "next-transpile-modules": "^8.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-esi": "^0.3.1",
     "responsive-loader": "^2.3.0",
     "sharp": "^0.29.2",
     "styled-components": "^5.3.3",
