@@ -14,7 +14,7 @@ app.prepare().then(() => {
   });
 
   server.get("*", (req, res) => {
-    return handle(req, res);
+    return res.send("<div><h1>Hellow world</h1></div>");
   });
 
   server.listen(port, (err) => {
