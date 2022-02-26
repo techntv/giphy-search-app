@@ -8,6 +8,7 @@ import styled from "styled-components";
 const Title = styled.h1`
   font-size: 50px;
   color: ${({ theme }) => theme.colors.primary};
+  padding: 30px 0;
 `;
 
 export default function Home(initialData) {
@@ -48,11 +49,11 @@ export default function Home(initialData) {
       </Head>
 
       <main>
-        <Title>My page</Title>
-        <div className="logo-container">
+        <Title>Giphy Search App</Title>
+        {/* <div className="logo-container">
           <Image src="/logo.png" alt="logo" layout="fill" />
-        </div>
-        <h1>Giphy Search App</h1>
+        </div> */}
+        {/* <h1>Giphy Search App</h1> */}
         <form onSubmit={search}>
           <input
             name="searchTerm"
